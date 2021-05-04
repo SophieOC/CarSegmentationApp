@@ -1,0 +1,17 @@
+{% extends "home.html" %} {% block body %}
+
+<div class="main">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="selectSelect">
+          <select onchange="get_img_list()" name="imgs" id="imgs-select">
+            <option value="">--Please choose an option--</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
