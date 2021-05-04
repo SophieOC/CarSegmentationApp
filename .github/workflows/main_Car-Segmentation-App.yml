@@ -59,4 +59,4 @@ jobs:
         with:
           app-name: 'Car-Segmentation-App'
           slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_52fdde93094e478d901bab777ea93fe9 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_8544d28a3c4a44fca6de2b0f51493bb9 }}
