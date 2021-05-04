@@ -9,17 +9,12 @@ anaconda-project==0.8.3
 appdirs==1.4.4
 applaunchservices==0.2.1
 applicationinsights==0.11.9
-appnope @ file:///opt/concourse/worker/volumes/live/0291c9e1-4b15-459f-623e-2770f55be269/volume/appnope_1594338395037/work
-appscript @ file:///opt/concourse/worker/volumes/live/50ca4c96-3090-40bb-6981-3a6114ed0af4/volume/appscript_1594840187551/work
 argh==0.26.2
-asn1crypto @ file:///opt/concourse/worker/volumes/live/29c500db-6cdf-4cc7-7df8-fca74d6f0b64/volume/asn1crypto_1594339172552/work
 astor==0.8.1
-astroid @ file:///opt/concourse/worker/volumes/live/21fd14a9-2a7e-484b-7394-5a9912cdcf80/volume/astroid_1592498459180/work
 astropy==4.0.1.post1
 astunparse==1.6.3
 atomicwrites==1.4.0
 attrs==19.3.0
-autopep8 @ file:///tmp/build/80754af9/autopep8_1592412889138/work
 azure-ai-textanalytics==5.1.0b3
 azure-common==1.1.26
 azure-core==1.13.0
@@ -55,12 +50,10 @@ backports.tempfile==1.0
 backports.weakref==1.0.post1
 base58==2.0.1
 beautifulsoup4==4.9.1
-bitarray @ file:///opt/concourse/worker/volumes/live/9034c98d-f3e3-4444-48f0-092269ed9919/volume/bitarray_1594753940633/work
 bkcharts==0.2
 bleach==3.1.5
 blinker==1.4
 blis==0.4.1
-bokeh @ file:///opt/concourse/worker/volumes/live/eb4a1f42-db74-4fc3-7f34-0189ef49c1a1/volume/bokeh_1593187606262/work
 boto==2.49.0
 boto3==1.16.12
 botocore==1.19.12
@@ -87,14 +80,11 @@ contextlib2==0.6.0.post1
 cryptography==3.2.1
 cycler==0.10.0
 cymem==2.0.3
-Cython @ file:///opt/concourse/worker/volumes/live/6158b663-a4ca-4e19-7e05-8807e4f79146/volume/cython_1594835048880/work
 cytoolz==0.9.0.1
 dask @ file:///tmp/build/80754af9/dask-core_1594156306305/work
 decorator==4.4.2
 defusedxml==0.6.0
-diff-match-patch @ file:///tmp/build/80754af9/diff-match-patch_1594828741838/work
 dill==0.2.9
-distributed @ file:///opt/concourse/worker/volumes/live/ec098701-cad7-4317-4576-0365c5f66992/volume/distributed_1594350140096/work
 distro==1.5.0
 docker==4.4.0
 docutils==0.16
@@ -117,7 +107,6 @@ fusepy==3.0.1
 future==0.18.2
 gast==0.3.3
 gensim==3.8.3
-gevent @ file:///opt/concourse/worker/volumes/live/78aec834-bbf0-47a7-799f-96dd2cf589ab/volume/gevent_1593009579767/work
 gitdb==4.0.5
 GitPython==3.1.11
 glob2==0.7
@@ -150,14 +139,12 @@ isodate==0.6.0
 isort==4.3.21
 itsdangerous==1.1.0
 jdcal==1.4.1
-jedi @ file:///opt/concourse/worker/volumes/live/1c5c293b-9147-4b4b-5a7f-d3f5eddb8470/volume/jedi_1592841952519/work
 jeepney==0.6.0
 Jinja2==2.11.2
 jmespath==0.10.0
 joblib @ file:///tmp/build/80754af9/joblib_1594236160679/work
 json5==0.9.5
 jsonpickle==1.4.1
-jsonschema @ file:///opt/concourse/worker/volumes/live/143dedb7-a810-4064-6e47-436d4dbcc943/volume/jsonschema_1594363611216/work
 jupyter==1.0.0
 jupyter-client @ file:///tmp/build/80754af9/jupyter_client_1594826976318/work
 jupyter-console==6.1.0
@@ -167,7 +154,6 @@ jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1594164409481/w
 Keras==2.4.3
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
-keyring @ file:///opt/concourse/worker/volumes/live/f2a8edc0-64b5-40f0-5d81-bbd31149cbe1/volume/keyring_1593109772159/work
 kiwisolver==1.2.0
 lazy-object-proxy==1.4.3
 libarchive-c==2.9
@@ -175,9 +161,7 @@ lightgbm==3.0.0
 lime==0.2.0.1
 llvmlite==0.33.0+1.g022ab0f
 locket==0.2.0
-lxml @ file:///opt/concourse/worker/volumes/live/d42457f0-83be-4fb6-6c8d-8f9319a861b0/volume/lxml_1594826854945/work
 Markdown==3.3.3
-MarkupSafe @ file:///opt/concourse/worker/volumes/live/cb778296-98db-45ad-411e-6f726e102dc3/volume/markupsafe_1594371638608/work
 matplotlib @ file:///opt/concourse/worker/volumes/live/59859a4b-794b-4c9f-51fd-a0ac1d1ab595/volume/matplotlib-base_1592846058943/work
 mccabe==0.6.1
 mistune @ file:///opt/concourse/worker/volumes/live/95802d64-d39c-491b-74ce-b9326880ca54/volume/mistune_1594373201816/work
