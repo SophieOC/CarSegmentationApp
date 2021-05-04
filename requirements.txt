@@ -4,7 +4,6 @@ azureml-automl-core==1.18.0.post1
 azureml-core==1.18.0.post3
 Flask==1.1.2
 future==0.18.2
-json
 Keras==2.4.3
 numpy==1.18.5
 opencv-python==4.4.0.44
