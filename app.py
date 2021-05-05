@@ -4,14 +4,11 @@ import requests
 from flask import jsonify
 from PIL import Image
 import numpy as np 
-import pandas as pd
 import os
 from azureml.core import Workspace, Datastore, Dataset
 import json
 
 import sys
-import streamlit as st
-import pickle
 from joblib import dump, load
 from PIL import Image
 from skimage.transform import resize
@@ -20,39 +17,13 @@ import time
 import re
 
 
-#loading the car segmentation model
-#resto_clf=load("svn_model.joblib")
-
-
-# telechargement du modele entrainé sur azure
-import segmentation_models as sm
-sm.set_framework('tf.keras')
 import tensorflow as tf
 from tensorflow import keras
 
 
-CLASS_WEIGHTS = None
-metrics = [sm.metrics.IOUScore(class_weights=CLASS_WEIGHTS), sm.metrics.FScore(class_weights=CLASS_WEIGHTS)]
-loss = sm.losses.DiceLoss(class_weights=CLASS_WEIGHTS)
-opt = keras.optimizers.Adam(learning_rate=0.001)
-
-
-   
-
-model_train = tf.keras.models.load_model('./model', custom_objects = {"dice_loss" : loss,
-                                                                      "val_iou_score": sm.metrics.IOUScore(class_weights=CLASS_WEIGHTS),
-                                                                      "iou_score" : sm.metrics.IOUScore(class_weights=CLASS_WEIGHTS), 
-                                                                      "f1-score": sm.metrics.FScore(class_weights=CLASS_WEIGHTS),
-                                                                      "val_f1-score": sm.metrics.FScore(class_weights=CLASS_WEIGHTS)   })
-
-    
 
 app = Flask(__name__)
-#home = Blueprint('home', __name__, template_folder='templates')
 
-# Config options - Make sure you created a 'config.py' file.
-#app.config.from_object('config')
-# To get one variable, tape app.config['MY_VARIABLE']
 
 
 
@@ -141,9 +112,7 @@ def listimgs():
     
     print(' \t >>>>>>>>>>>>>>> 2')
     response =  {'status': 'ok', 'data': val_files.tolist()}
-    
-    #response2 = requests.get("http://127.0.0.1:5000/api/get_img_list/")   
-    #jsonObj = response.json()
+
     return jsonify(response)    
 
 
@@ -197,22 +166,17 @@ def predict():
     print('>>>>>>>>>>> /api/predict')
 
     print('\t >>>>>>>>>>>>>>> 1')
-    #data = flask.request.data
-    #body = json.loads(data)
-    #image = body["image"]
     data = request.get_json()
     image = data["image"]
     
     
     print('\t >>>>>>>>>>>>>>> 2')
     image_path = "./static/images/raw/" + image + '_leftImg8bit.png_img.png'
-    
-    #input_data = json.dumps({"data" : ['data/val/' + image + '_leftImg8bit.png_img.png' ]})
+
     input_data = json.dumps({"data" : image })
 
     #headers = {'Content-Type': 'application/json', 'Cache-Control': 'no-cache'}
     headers = {'Content-Type': 'application/json'}
-    #print(headers)
     # adresse du endpoint:
     resp = requests.post('http://3b4d0601-2904-4b29-a504-b173f8a49ad4.westeurope.azurecontainer.io/score', input_data, headers=headers)   
     print('resp: ', resp)
@@ -220,42 +184,11 @@ def predict():
        
     print('\t >>>>>>>>>>>>>>> 3') 
         
-    ###############
-    ## SI MODELE EN LOCAL (model_train)
-    ##############
-    #X = Image.open(image_path)
-    #X = np.array(X)
-    #print(X.shape)
-    #X = np.expand_dims(X, axis=0)
-    #print(X.shape) 
-    
-    #pred_mask = model_train.predict(X)
-    #prediction_array = LayersToRGBImage(np.squeeze(pred_mask, axis=0))
-    
-    
-    ##################
-    ##### LABEL TRUE #
-    #pred_mask = np.squeeze(pred_mask, axis=0)
-    
-    #print('je susi la')
-    # on resize 
-    #dim = (2048,1024)
-    #img_pil = pred_mask.resize(dim)
-    #print(img_pil.size)
-    #img_pil = np.asarray(img_pil)
-    # on colorise les 8 catégories 
-    #prediction_array = recolor_img(img_pil)
-    
-
     ##################
     ### MODEL VIA ENDPOINT
     ##################
     #print(resp.json())
-    new_image = tf.keras.preprocessing.image.array_to_img(np.array(json.loads(resp.json())))
-    #new_image = Image.fromarray(np.array(json.loads(resp.json()), dtype='uint8'))
-    #prediction = json.loads(resp.json())['imagepred']
-    #print(prediction)
-   
+    new_image = tf.keras.preprocessing.image.array_to_img(np.array(json.loads(resp.json())))  
     new_image.save('./static/images/predict/'+ image + '_predict.png', 'PNG') 
  
     
