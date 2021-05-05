@@ -55,37 +55,6 @@ def LayersToRGBImage(img):
     nimg = nimg/255.0
     return nimg
 
-def recolor_img(label_path):
-    #img = Image.open(label_path)
-    #print (img.size)
-    #print(np.unique(img))
-    img = label_path
-    img2 = np.zeros((1024, 2048, 3), dtype=np.uint8)
-        
-    for y in range(img.shape[1]):
-        for x in range(img.shape[0]):
-            #z = img.getpixel((x,y))
-            z = img[x ,y ]
-            if z == 0:
-                r, g, b =0, 0, 0
-            elif z == 1:
-                r, g, b = 128, 64, 128
-            elif z == 2: 
-                r, g, b = 150, 100, 100
-            elif z == 3: 
-                r, g, b = 220, 220, 0
-            elif z == 4: 
-                r, g, b = 107, 142, 35
-            elif z == 5: 
-                r, g, b = 70, 130, 180 
-            elif z == 6: 
-                r, g, b = 220, 20, 60
-            else: 
-                r, g, b = 119, 11, 32 
-            img2[x, y] = (r, g, b)    
-            #img2.putpixel((x,y),(r,g,b,255))            
-
-    return img2
 
 
 ########################
