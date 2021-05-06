@@ -1,8 +1,8 @@
+Flask>=1.0,<=1.1.2
 azure-storage-blob==12.8.1
 azure-storage-common==2.1.0
 azureml-automl-core==1.18.0.post1
 azureml-core==1.18.0.post3
-Flask==1.1.2
 future==0.18.2
 Keras==2.4.3
 numpy==1.18.5
