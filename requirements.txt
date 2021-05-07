@@ -72,7 +72,6 @@ chardet==3.0.4
 cityscapesScripts==2.2.0
 click==7.1.2
 cloudpickle==1.6.0
-clyent==1.2.2
 colorama==0.4.3
 coloredlogs==15.0
 conda==4.9.0
